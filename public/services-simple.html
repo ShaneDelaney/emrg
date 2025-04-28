@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="emrg services - Trend insights, content strategy, and voice development for emerging brands and platforms.">
+    <title>Services | emrg Creative Strategy Studio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            overflow-y: auto;
+            height: auto;
+        }
+        
+        main {
+            padding-top: 70px;
+        }
+        
+        .services-hero {
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        
+        .services-cards {
+            padding: 4rem 0;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .service-card {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">emrg</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services-simple.html" class="nav-link active">Services</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Services Hero Section -->
+        <section class="services-hero">
+            <div class="container">
+                <h1>What We Offer</h1>
+                <p>Strategic services designed to keep your brand ahead of cultural shifts and digital trends.</p>
+            </div>
+        </section>
+
+        <!-- Services Cards Section -->
+        <section class="services-cards">
+            <div class="container">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h2>Trend Pulse Reports</h2>
+                        <p>Monthly or on-demand decks spotting emerging culture and social shifts.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h2>Social Content Audits</h2>
+                        <p>Deep-dive assessments to boost digital presence and engagement.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h2>Viral Concept Decks</h2>
+                        <p>Playbooks for campaigns and launches based on what's trending.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h2>Creative Voice Development</h2>
+                        <p>Messaging frameworks to build brand resonance with Gen Z and Millennials.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 emrg | Creative Strategy Studio</p>
+        </div>
+    </footer>
+
+    <script>
+        console.log('Simple services page loaded');
+        
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenu.addEventListener('click', function() {
+                mobileMenu.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html> 

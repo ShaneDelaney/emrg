@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Helping brands catch what's next. Trend insights, content strategy, and voice development for emerging brands and platforms.">
     <title>emrg | Creative Trend Strategy by Shane Delaney</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/fix-top-section.css">
+    <link rel="stylesheet" href="/modal.css">
 </head>
 <body>
     <header>
@@ -23,7 +25,7 @@
             <ul class="nav-menu">
                 <li><a href="#hero" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="#clients" class="nav-link">Clients</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -81,24 +83,106 @@
     <section id="clients" class="clients">
         <div class="container">
             <h2>Who We've Helped</h2>
-            <div class="client-logos">
-                <div class="logo-item">Snap Inc.</div>
-                <div class="logo-item">Phony Content</div>
-                <div class="logo-item">StockX</div>
+            <p class="section-intro">We've partnered with innovative brands at the forefront of digital culture, helping them connect with audiences and drive meaningful engagement.</p>
+            
+            <div class="client-showcase">
+                <!-- Snap Inc. -->
+                <div class="client-card">
+                    <div class="client-logo">
+                        <img src="images/snap-logo.png" alt="Snap Inc. Logo" class="logo-image">
+                        <h3>Snap Inc.</h3>
+                    </div>
+                    <div class="client-metrics">
+                        <div class="metric">
+                            <span class="metric-number">453M+</span>
+                            <span class="metric-label">Daily Active Users</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">500M+</span>
+                            <span class="metric-label">Monthly Spotlight Users</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">175%</span>
+                            <span class="metric-label">YoY Spotlight Growth</span>
+                        </div>
+                    </div>
+                    <div class="client-impact">
+                        <h4>Our Impact</h4>
+                        <p>Helped drive millions of Spotlight views through curated viral content strategies, contributing to the platform's 175% year-over-year growth in time spent.</p>
+                        <ul class="impact-points">
+                            <li>Developed content frameworks that increased viewer retention by 40%</li>
+                            <li>Created trend-aligned storytelling formats for Gen Z audiences</li>
+                            <li>Supported Spotlight's rapid user growth with culturally relevant content</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Phony Content -->
+                <div class="client-card">
+                    <div class="client-logo">
+                        <img src="images/phony-logo.png" alt="Phony Content Logo" class="logo-image">
+                        <h3>Phony Content</h3>
+                    </div>
+                    <div class="client-metrics">
+                        <div class="metric">
+                            <span class="metric-number">14M+</span>
+                            <span class="metric-label">Cross-Platform Audience</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">70M+</span>
+                            <span class="metric-label">Monthly Video Views</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">170M+</span>
+                            <span class="metric-label">Minutes Watched Monthly</span>
+                        </div>
+                    </div>
+                    <div class="client-impact">
+                        <h4>Our Impact</h4>
+                        <p>Scripted top-viewed Snapchat stories with over 40% retention rates, helping establish Phony Content as "the largest network of scripted storytelling on social media."</p>
+                        <ul class="impact-points">
+                            <li>Developed chat fiction formats that resonated with Gen Z viewers</li>
+                            <li>Created viral episodes garnering 15M+ views</li>
+                            <li>Contributed to the company's growth across six different shows</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- StockX -->
+                <div class="client-card">
+                    <div class="client-logo">
+                        <img src="images/stockx-logo.png" alt="StockX Logo" class="logo-image">
+                        <h3>StockX</h3>
+                    </div>
+                    <div class="client-metrics">
+                        <div class="metric">
+                            <span class="metric-number">15M+</span>
+                            <span class="metric-label">Lifetime Buyers</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">50M+</span>
+                            <span class="metric-label">Trades Facilitated</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-number">45%</span>
+                            <span class="metric-label">YoY Streetwear Sales Growth</span>
+                        </div>
+                    </div>
+                    <div class="client-impact">
+                        <h4>Our Impact</h4>
+                        <p>Supported creative campaigns ensuring brand consistency and elevated storytelling, contributing to StockX's position as a cultural bellwether in the $3.8B sneaker and streetwear marketplace.</p>
+                        <ul class="impact-points">
+                            <li>Developed trend-aligned content strategies for emerging audiences</li>
+                            <li>Created messaging that resonated with the growing female user segment (38% of customers)</li>
+                            <li>Supported the brand's cultural relevance through authentic storytelling</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="client-impact">
-                <div class="impact-item">
-                    <h4>Snap Inc.</h4>
-                    <p>Helped drive millions of Spotlight views through curated viral content.</p>
-                </div>
-                <div class="impact-item">
-                    <h4>Phony Content</h4>
-                    <p>Scripted top-viewed Snapchat stories with over 40% retention rates.</p>
-                </div>
-                <div class="impact-item">
-                    <h4>StockX</h4>
-                    <p>Supported creative campaigns ensuring brand consistency and elevated storytelling.</p>
-                </div>
+            
+            <div class="client-cta">
+                <h3>Ready to join these forward-thinking brands?</h3>
+                <a href="#contact" class="cta-button">Let's Talk</a>
             </div>
         </div>
     </section>
@@ -214,5 +298,6 @@
     </section>
 
     <script src="script.js"></script>
+    <script src="script-fix.js"></script>
 </body>
 </html> 

@@ -13,15 +13,19 @@
 <body>
     <header id="home">
         <nav>
-            <div class="logo">
-                <a href="index.html"><h1>emrg</h1></a>
+            <div class="logo">emrg</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <div class="nav-links">
-                <a href="about.html" class="active">About</a>
-                <a href="services.html">Services</a>
-                <a href="clients.html">Clients</a>
-                <a href="contact.html">Contact</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="index.html#clients" class="nav-link">Clients</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -42,11 +46,11 @@
                 
                 <p>I specialize in helping brands stay culturally relevant, connect with new audiences, and move faster than the market.</p>
                 
-                <a href="contact.html" class="cta-button">WORK WITH ME</a>
+                <a href="index.html#contact" class="cta-button">WORK WITH ME</a>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="multi-page-nav.js"></script>
 </body>
 </html> 

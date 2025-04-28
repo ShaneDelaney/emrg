@@ -3,76 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trend insights, cultural strategy, and content innovation for emerging brands and platforms.">
-    <title>emrg | Trend Strategy by Shane Delaney</title>
+    <meta name="description" content="emrg services - Trend insights, content strategy, and voice development for emerging brands and platforms.">
+    <title>Services | emrg Creative Strategy Studio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <header id="home">
+<body class="services-page">
+    <header>
         <nav>
-            <div class="logo">
-                <a href="index.html"><h1>emrg</h1></a>
+            <div class="logo">emrg</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
-            <div class="nav-links">
-                <a href="about.html">About</a>
-                <a href="services.html" class="active">Services</a>
-                <a href="clients.html">Clients</a>
-                <a href="contact.html">Contact</a>
-            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="index.html#clients" class="nav-link">Clients</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <div class="page-content">
-        <div class="container">
-            <h1 class="page-title fade-in">What I Offer</h1>
-            
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <h3>Trend Pulse Reports</h3>
-                    <p class="price">Starting at $500</p>
-                    <p>Monthly or custom decks spotting emerging culture and social shifts.</p>
-                    <div class="service-highlight">
-                        <p><strong>Why it matters:</strong> Brands that actively monitor trends see 2.3x faster audience growth (McKinsey 2023).</p>
+    <main>
+        <!-- Services Hero Section -->
+        <section class="services-hero">
+            <div class="container">
+                <h1>What We Offer</h1>
+                <p class="services-intro">Strategic services designed to keep your brand ahead of cultural shifts and digital trends.</p>
+            </div>
+        </section>
+
+        <!-- Add this after the services-hero section -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <div class="scroll-text">Scroll to explore</div>
+        </div>
+
+        <!-- Services Cards Section -->
+        <section class="services-cards">
+            <div class="container">
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h2>Trend Pulse Reports</h2>
+                        <p>Monthly or on-demand decks spotting emerging culture and social shifts.</p>
+                        <ul class="service-features">
+                            <li>Cultural trend forecasting</li>
+                            <li>Platform-specific insights</li>
+                            <li>Actionable brand opportunities</li>
+                        </ul>
+                        <div class="price">Starting at $500</div>
                     </div>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <h3>Social Content Audits</h3>
-                    <p class="price">Starting at $750</p>
-                    <p>Audit of your digital footprint with actionable strategies to boost relevance, retention, and virality.</p>
-                    <div class="service-highlight">
-                        <p><strong>Why it matters:</strong> Brands that adapt content to trends see 45% higher engagement rates (HubSpot 2022).</p>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h2>Social Content Audits</h2>
+                        <p>Deep-dive assessments to boost digital presence and engagement.</p>
+                        <ul class="service-features">
+                            <li>Content performance analysis</li>
+                            <li>Audience engagement insights</li>
+                            <li>Strategic recommendations</li>
+                        </ul>
+                        <div class="price">Starting at $750</div>
                     </div>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <h3>Viral Concept Decks</h3>
-                    <p class="price">Starting at $1,200</p>
-                    <p>Playbooks for social content, launches, and campaigns based on what's moving culture.</p>
-                    <div class="service-highlight">
-                        <p><strong>Why it matters:</strong> Agile campaigns tied to emerging trends outperform evergreen campaigns by 38% (Meta Insights 2023).</p>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🚀</div>
+                        <h2>Viral Concept Decks</h2>
+                        <p>Playbooks for campaigns and launches based on what's trending.</p>
+                        <ul class="service-features">
+                            <li>Trend-aligned campaign concepts</li>
+                            <li>Platform-specific strategies</li>
+                            <li>Content series frameworks</li>
+                        </ul>
+                        <div class="price">Starting at $1,200</div>
                     </div>
-                </div>
-                
-                <div class="service-card fade-in">
-                    <h3>Creative Voice Development</h3>
-                    <p class="price">Custom Pricing</p>
-                    <p>Tone frameworks and messaging libraries to better speak to Gen Z + Millennials.</p>
-                    <div class="service-highlight">
-                        <p><strong>Why it matters:</strong> Gen Z is 3x more likely to engage with brands that feel culturally authentic (EY Future Consumer Index 2024).</p>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">💬</div>
+                        <h2>Creative Voice Development</h2>
+                        <p>Messaging frameworks to build brand resonance with Gen Z and Millennials.</p>
+                        <ul class="service-features">
+                            <li>Brand voice guidelines</li>
+                            <li>Audience-aligned messaging</li>
+                            <li>Platform-specific tone adaptation</li>
+                        </ul>
+                        <div class="price">Custom pricing</div>
                     </div>
                 </div>
             </div>
-            
-            <div class="cta-container fade-in">
-                <a href="contact.html" class="cta-button">GET STARTED</a>
+        </section>
+
+        <!-- Our Work Section -->
+        <section id="work" class="our-work">
+            <div class="container">
+                <div class="work-header">
+                    <h1>Our Work</h1>
+                    <p class="work-intro">Creative strategies rooted in cultural momentum. Here's a glimpse at the kind of impact we help brands create.</p>
+                    <p class="work-disclaimer">The following examples are representative of our work; actual client deliverables are confidential.</p>
+                </div>
+                
+                <div class="work-showcase">
+                    <!-- Case Study 1 -->
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="brand-logo">
+                                <span class="emoji-logo">🛹</span>
+                                <h2>VANS</h2>
+                            </div>
+                            <div class="project-type">Trend Pulse Report</div>
+                        </div>
+                        
+                        <div class="case-study-content">
+                            <h3>"Micro Nostalgia and the Gen Z Skate Resurgence"</h3>
+                            
+                            <div class="case-study-image">
+                                <img src="https://via.placeholder.com/1200x600?text=VANS+Trend+Report+Preview" alt="VANS Trend Report Preview">
+                                <div class="image-overlay">
+                                    <button class="view-sample" data-sample="vans">View Mockup</button>
+                                </div>
+                            </div>
+                            
+                            <div class="case-study-details">
+                                <div class="challenge">
+                                    <h4>Challenge</h4>
+                                    <p>Help VANS identify emerging cultural trends to maintain relevance with Gen Z skate enthusiasts.</p>
+                                </div>
+                                
+                                <div class="approach">
+                                    <h4>Approach</h4>
+                                    <ul>
+                                        <li>Forecasted early 2000s skate fashion revival trend</li>
+                                        <li>Outlined brand opportunities: limited throwback drops, DIY-focused collabs, raw content formats</li>
+                                        <li>Analyzed platform-specific engagement patterns across TikTok, Instagram, and YouTube</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="results">
+                                    <h4>Strategy</h4>
+                                    <p>Increase cultural relevance through trend-led capsule collections and UGC that taps into micro-nostalgia moments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Case Study 2 -->
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="brand-logo">
+                                <span class="emoji-logo">🏞️</span>
+                                <h2>Outdoor Voices</h2>
+                            </div>
+                            <div class="project-type">Content Audit</div>
+                        </div>
+                        
+                        <div class="case-study-content">
+                            <h3>"Bringing Movement Back Into the Feed"</h3>
+                            
+                            <div class="case-study-image">
+                                <img src="https://via.placeholder.com/1200x600?text=Outdoor+Voices+Content+Audit+Preview" alt="Outdoor Voices Content Audit Preview">
+                                <div class="image-overlay">
+                                    <button class="view-sample" data-sample="ov">View Mockup</button>
+                                </div>
+                            </div>
+                            
+                            <div class="case-study-details">
+                                <div class="challenge">
+                                    <h4>Challenge</h4>
+                                    <p>Revitalize Outdoor Voices' social content strategy to better connect with their community and drive engagement.</p>
+                                </div>
+                                
+                                <div class="approach">
+                                    <h4>Approach</h4>
+                                    <ul>
+                                        <li>Identified underleveraged TikTok potential and UGC strategy gaps</li>
+                                        <li>Proposed real-life GRWM challenges, microadventure trend content, creator ambassador pilot</li>
+                                        <li>Developed content pillars aligned with audience interests and platform algorithms</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="results">
+                                    <h4>Strategy</h4>
+                                    <p>Boost TikTok growth and community-led engagement by integrating more authentic outdoor culture narratives and everyday movement moments.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Case Study 3 -->
+                    <div class="case-study">
+                        <div class="case-study-header">
+                            <div class="brand-logo">
+                                <span class="emoji-logo">✨</span>
+                                <h2>Glossier</h2>
+                            </div>
+                            <div class="project-type">Viral Concept Deck</div>
+                        </div>
+                        
+                        <div class="case-study-content">
+                            <h3>"Beauty for the In-Between"</h3>
+                            
+                            <div class="case-study-image">
+                                <img src="https://via.placeholder.com/1200x600?text=Glossier+Concept+Deck+Preview" alt="Glossier Concept Deck Preview">
+                                <div class="image-overlay">
+                                    <button class="view-sample" data-sample="glossier">View Mockup</button>
+                                </div>
+                            </div>
+                            
+                            <div class="case-study-details">
+                                <div class="challenge">
+                                    <h4>Challenge</h4>
+                                    <p>Create a summer campaign concept that would resonate with Glossier's audience and drive authentic engagement.</p>
+                                </div>
+                                
+                                <div class="approach">
+                                    <h4>Approach</h4>
+                                    <ul>
+                                        <li>Concepted a summer campaign celebrating minimal refresh moments and everyday beauty</li>
+                                        <li>Proposed UGC-driven storytelling series (Midday Refresh, Glossier Sightings)</li>
+                                        <li>Developed platform-specific content strategies for TikTok, Instagram, and YouTube</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="results">
+                                    <h4>Strategy</h4>
+                                    <p>Deepen brand affinity by aligning with authenticity and low-effort beauty trends that celebrate real moments throughout the day.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-cta">
+                    <h3>Ready to see what we could create for your brand?</h3>
+                    <a href="index.html#contact" class="cta-button">Book a Free Discovery Call</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Add this section where you want to display the client logos -->
+        <section id="work-samples" class="work-samples">
+            <div class="container">
+                <h2>Selected Work</h2>
+                <p class="section-intro">View samples of recent projects for leading brands.</p>
+                
+                <div class="client-logos">
+                    <div class="logo-container">
+                        <img src="images/glossier-logo.png" alt="Glossier" class="client-logo">
+                    </div>
+                    <div class="logo-container">
+                        <img src="images/vans-logo.png" alt="Vans" class="client-logo">
+                    </div>
+                    <div class="logo-container">
+                        <img src="images/outdoor-voices-logo.png" alt="Outdoor Voices" class="client-logo">
+                    </div>
+                </div>
+                
+                <!-- Sample cards section -->
+                <div class="samples-grid">
+                    <div class="sample-card">
+                        <h3>Trend Reports</h3>
+                        <p>Cultural insights and emerging trends for forward-thinking brands.</p>
+                        <button class="view-sample" data-sample="trend">View Sample</button>
+                    </div>
+                    
+                    <div class="sample-card">
+                        <h3>Content Audits</h3>
+                        <p>Strategic analysis of content performance and optimization recommendations.</p>
+                        <button class="view-sample" data-sample="audit">View Sample</button>
+                    </div>
+                    
+                    <div class="sample-card">
+                        <h3>Viral Concept Decks</h3>
+                        <p>Creative concepts designed to capture attention and drive engagement.</p>
+                        <button class="view-sample" data-sample="glossier">View Sample</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Update the modal content to reference the actual brands -->
+        <div id="sample-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal"></span>
+                
+                <div id="trend-preview" class="preview-content">
+                    <h3>Vans | Trend Report</h3>
+                    <p class="mockup-disclaimer">This is a mockup for demonstration purposes only.</p>
+                    <div class="preview-slides">
+                        <div class="slide">
+                            <img src="images/vans-logo.png" alt="Vans Trend Report" class="preview-logo">
+                            <img src="https://via.placeholder.com/800x450?text=Vans+Trend+Report" alt="Vans Trend Report Mockup">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="audit-preview" class="preview-content">
+                    <h3>Outdoor Voices | Content Audit</h3>
+                    <p class="mockup-disclaimer">This is a mockup for demonstration purposes only.</p>
+                    <div class="preview-slides">
+                        <div class="slide">
+                            <img src="images/outdoor-voices-logo.png" alt="Outdoor Voices Content Audit" class="preview-logo">
+                            <img src="https://via.placeholder.com/800x450?text=Outdoor+Voices+Content+Audit" alt="Outdoor Voices Audit Mockup">
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="glossier-preview" class="preview-content">
+                    <h3>Glossier | Viral Concept Deck</h3>
+                    <p class="mockup-disclaimer">This is a mockup for demonstration purposes only.</p>
+                    <div class="preview-slides">
+                        <div class="slide">
+                            <img src="images/glossier-logo.png" alt="Glossier" class="preview-logo">
+                            <img src="images/glossier-concept-deck-preview.png" alt="Glossier Concept Deck Preview" class="concept-preview">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <script src="script.js"></script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 emrg | Creative Strategy Studio</p>
+        </div>
+    </footer>
+
+    <script src="multi-page-nav.js"></script>
+    <script src="services.js"></script>
 </body>
 </html> 
