@@ -1,25 +1,26 @@
 const express = require('express');
+const path = require('path');
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
-// Serve static files from the 'public' directory
-app.use(express.static('public'));
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Enable JSON parsing for API requests
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-// Define a route
-app.get('/api', (req, res) => {
-  res.json({ message: 'Hello from the server!' });
+// Specific routes for HTML pages
+app.get('/about.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
-// Catch-all route to handle SPA routing if needed
+app.get('/services.html', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'services.html'));
+});
+
+// Route all other requests to index.html for client-side routing
 app.get('*', (req, res) => {
-  res.sendFile('index.html', { root: './public' });
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 }); 

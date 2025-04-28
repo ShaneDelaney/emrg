@@ -8,6 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileMenu.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
             navMenu.classList.toggle('active');
+            
+            // Add this to ensure the menu is visible
+            if (navMenu.classList.contains('active')) {
+                navMenu.style.display = 'flex';
+                navMenu.style.opacity = '1';
+                navMenu.style.visibility = 'visible';
+            } else {
+                setTimeout(() => {
+                    navMenu.style.display = '';
+                    navMenu.style.opacity = '';
+                    navMenu.style.visibility = '';
+                }, 300);
+            }
         });
     }
     
