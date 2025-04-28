@@ -66,6 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize metrics animation
     animateMetrics();
+    
+    // Initialize hero animations
+    initHeroAnimations();
+    
+    // Create progress bar
+    createProgressBar();
+    
+    // Initialize scroll animations
+    initScrollAnimations();
 });
 
 // Initialize animations
@@ -92,11 +101,23 @@ function initAnimations() {
 function initMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
+    const body = document.body;
     
     if (mobileMenu && navMenu) {
         mobileMenu.addEventListener('click', function() {
             mobileMenu.classList.toggle('active');
             navMenu.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        });
+        
+        // Close menu when clicking a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+                body.classList.remove('no-scroll');
+            });
         });
     }
 }
@@ -197,6 +218,7 @@ function initNavigation() {
                     if (navMenu && navMenu.classList.contains('active')) {
                         mobileMenu.classList.remove('active');
                         navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
                     }
                     
                     // Update URL hash without scrolling
@@ -204,21 +226,18 @@ function initNavigation() {
                     
                     // Run animations for the new section
                     initAnimations();
-                    
-                    // Check metrics if applicable
-                    if (typeof checkMetrics === 'function') {
-                        checkMetrics();
-                    }
                 }
             }
             // For external links or links to other pages, let the browser handle it normally
         });
     });
     
-    // Handle navigation menu links to other pages (not hash links)
-    document.querySelectorAll('a:not([href^="#"])').forEach(link => {
-        // We don't need to add event listeners for these links
-        // Let the browser handle them normally
+    // Special handling for links that include hash but are not on the current page
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+        const href = anchor.getAttribute('href');
+        if (href && !href.startsWith('#') && href.includes('#')) {
+            // These are links like "index.html#about" - let the browser handle them normally
+        }
     });
 }
 
@@ -423,4 +442,128 @@ function adjustMobileCentering() {
         // Reset on desktop
         heroContent.style.marginTop = '0';
     }
+}
+
+// Hero animations
+function initHeroAnimations() {
+    const heroElements = document.querySelectorAll('.hero .animate-in');
+    
+    // Add visible class with delay
+    heroElements.forEach((element, index) => {
+        setTimeout(() => {
+            element.classList.add('visible');
+        }, 300 + (index * 200));
+    });
+}
+
+// Create and add progress bar
+function createProgressBar() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'progress-bar';
+    document.body.appendChild(progressBar);
+    
+    // Update progress bar based on scroll position
+    window.addEventListener('scroll', function() {
+        const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPosition = window.scrollY;
+        const scrollPercentage = (scrollPosition / windowHeight) * 100;
+        
+        progressBar.style.width = scrollPercentage + '%';
+    });
+}
+
+// Scroll animations
+function initScrollAnimations() {
+    // Initial check for elements in viewport
+    checkVisibility();
+    
+    // Check elements visibility on scroll
+    window.addEventListener('scroll', function() {
+        checkVisibility();
+    });
+    
+    function checkVisibility() {
+        // Hero animations
+        const animateElements = document.querySelectorAll('.animate-in');
+        animateElements.forEach(element => {
+            if (isInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+        
+        // Reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+        revealElements.forEach(element => {
+            if (isInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+        
+        // Staggered reveal animations
+        const staggerElements = document.querySelectorAll('.reveal-stagger');
+        staggerElements.forEach(element => {
+            if (isInViewport(element)) {
+                element.classList.add('visible');
+            }
+        });
+    }
+    
+    // Check if element is in viewport
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+            rect.bottom >= 0
+        );
+    }
+}
+
+// Smooth scroll to section when clicking any link with a hash
+document.addEventListener('click', function(e) {
+    // Check if the clicked element is a link with a hash
+    if (e.target.tagName === 'A' && e.target.getAttribute('href') && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (mobileMenu && navMenu && navMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+            
+            // Smooth scroll to target
+            window.scrollTo({
+                top: targetElement.offsetTop - 90, // Adjust for header height
+                behavior: 'smooth'
+            });
+            
+            // Update URL without scrolling
+            history.pushState(null, null, targetId);
+        }
+    }
+});
+
+// Form submission (for demonstration)
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const formValues = Object.fromEntries(formData.entries());
+        
+        // Show success message (in a real implementation, you would send this data to a server)
+        alert('Thanks for your message! This is a demo form - in a real implementation, your message would be sent to the server.');
+        
+        // Reset form
+        contactForm.reset();
+    });
 } 

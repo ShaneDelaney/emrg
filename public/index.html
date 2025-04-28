@@ -3,303 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Helping brands catch what's next. Trend insights, content strategy, and voice development for emerging brands and platforms.">
-    <title>emrg | Creative Trend Strategy by Shane Delaney</title>
-    <link rel="stylesheet" href="/styles.css">
+    <meta name="description" content="emrg - Creative strategy studio helping brands move at the speed of culture. Trend insights, content strategy, and voice development for emerging brands.">
+    <title>emrg | Creative Strategy Studio</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/fix-top-section.css">
-    <link rel="stylesheet" href="/modal.css">
-    <link rel="stylesheet" href="mobile-menu-fix.css">
-    <link rel="stylesheet" href="mobile-optimization.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">emrg</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#hero" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="#clients" class="nav-link">Clients</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#hero" class="logo">emrg</a>
+                <div class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#hero" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="hero" class="hero active">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Helping brands catch what's next — and create it.</h1>
-                <p>Trend reports, content audits, viral concept decks, and voice development for brands that move fast.</p>
-                <a href="#contact" class="cta-button">Work With Me</a>
-            </div>
-            <footer>
-                <p>&copy; 2024 emrg | Creative Strategy Studio</p>
-            </footer>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About emrg</h2>
-            <p>Led by Shane Delaney, emrg is a creative strategy studio helping brands stay ahead of culture. Shane has shaped viral content for Snap Inc., Phony Content, and StockX — delivering campaigns that captured millions of views, boosted audience growth, and built cultural relevance.</p>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2>What We Offer</h2>
-            <div class="service-cards">
-                <div class="card">
-                    <h3>Trend Pulse Reports</h3>
-                    <p>Monthly or on-demand decks spotting emerging culture and social shifts.</p>
-                    <div class="price">Starting at $500</div>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title animate-in">Move at the speed of culture.</h1>
+                    <p class="hero-subtitle animate-in">Trend reports, content audits, and viral concept decks for brands that want to stay ahead.</p>
+                    <a href="#contact" class="cta-button animate-in">Work With Me</a>
                 </div>
-                <div class="card">
-                    <h3>Social Content Audits</h3>
-                    <p>Deep-dive assessments to boost digital presence and engagement.</p>
-                    <div class="price">Starting at $750</div>
-                </div>
-                <div class="card">
-                    <h3>Viral Concept Decks</h3>
-                    <p>Playbooks for campaigns and launches based on what's trending.</p>
-                    <div class="price">Starting at $1,200</div>
-                </div>
-                <div class="card">
-                    <h3>Creative Voice Development</h3>
-                    <p>Messaging frameworks to build brand resonance with Gen Z and Millennials.</p>
-                    <div class="price">Custom pricing</div>
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="clients" class="clients">
-        <div class="container">
-            <h2>Who We've Helped</h2>
-            <p class="section-intro">We've partnered with innovative brands at the forefront of digital culture, helping them connect with audiences and drive meaningful engagement.</p>
-            
-            <div class="client-showcase">
-                <!-- Snap Inc. -->
-                <div class="client-card">
-                    <div class="client-logo">
-                        <img src="images/snap-logo.png" alt="Snap Inc. Logo" class="logo-image">
-                        <h3>Snap Inc.</h3>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="reveal">About</h2>
+                    <div class="accent-line reveal"></div>
+                </div>
+                
+                <div class="about-content full-width">
+                    <div class="about-text reveal">
+                        <h3>Bringing Cultural Momentum to Brands</h3>
+                        <p class="lead">I'm Shane Delaney — a creative strategist specializing in trend discovery, content innovation, and brand voice development.</p>
+                        
+                        <div class="experience-grid">
+                            <div class="experience-item reveal-stagger">
+                                <div class="experience-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="experience-content">
+                                    <h4>Snap Inc.</h4>
+                                    <p>Curated viral content driving millions of views on Spotlight</p>
+                                </div>
+                            </div>
+                            
+                            <div class="experience-item reveal-stagger">
+                                <div class="experience-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="experience-content">
+                                    <h4>Phony Content</h4>
+                                    <p>Scripted record-breaking Snapchat stories with 35%–45% viewer retention</p>
+                                </div>
+                            </div>
+                            
+                            <div class="experience-item reveal-stagger">
+                                <div class="experience-icon">
+                                    <svg viewBox="0 0 24 24" width="24" height="24">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                    </svg>
+                                </div>
+                                <div class="experience-content">
+                                    <h4>StockX</h4>
+                                    <p>Assisted major creative campaigns ensuring brand consistency and elevated storytelling</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <p class="approach-text reveal">I specialize in helping brands stay culturally relevant, connect with new audiences, and move faster than the market. My approach combines deep cultural insights with strategic execution to create content that resonates and drives engagement.</p>
                     </div>
-                    <div class="client-metrics">
-                        <div class="metric">
-                            <span class="metric-number">453M+</span>
-                            <span class="metric-label">Daily Active Users</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="reveal">Services</h2>
+                    <div class="accent-line reveal"></div>
+                    <p class="section-intro reveal">Strategic services designed to keep your brand ahead of cultural shifts and digital trends.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path d="M13.5 8H12v5l4.28 2.54.72-1.21-3.5-2.08V8M13 3a9 9 0 0 0-9 9H1l3.96 4.03L9 12H6a7 7 0 0 1 7-7 7 7 0 0 1 7 7 7 7 0 0 1-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42A8.896 8.896 0 0 0 13 21a9 9 0 0 0 9-9 9 9 0 0 0-9-9"/>
+                            </svg>
                         </div>
-                        <div class="metric">
-                            <span class="metric-number">500M+</span>
-                            <span class="metric-label">Monthly Spotlight Users</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-number">175%</span>
-                            <span class="metric-label">YoY Spotlight Growth</span>
-                        </div>
-                    </div>
-                    <div class="client-impact">
-                        <h4>Our Impact</h4>
-                        <p>Helped drive millions of Spotlight views through curated viral content strategies, contributing to the platform's 175% year-over-year growth in time spent.</p>
-                        <ul class="impact-points">
-                            <li>Developed content frameworks that increased viewer retention by 40%</li>
-                            <li>Created trend-aligned storytelling formats for Gen Z audiences</li>
-                            <li>Supported Spotlight's rapid user growth with culturally relevant content</li>
+                        <h3>Trend Pulse Reports</h3>
+                        <p>Monthly or on-demand decks spotting emerging culture and social shifts before they hit the mainstream.</p>
+                        <ul class="service-features">
+                            <li>Cultural trend forecasting</li>
+                            <li>Platform-specific insights</li>
+                            <li>Actionable brand opportunities</li>
                         </ul>
+                        <div class="service-price">Starting at $500</div>
+                    </div>
+                    
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
+                            </svg>
+                        </div>
+                        <h3>Social Content Audits</h3>
+                        <p>Deep-dive assessments to boost digital presence and engagement across all platforms.</p>
+                        <ul class="service-features">
+                            <li>Performance analysis</li>
+                            <li>Content strategy recommendations</li>
+                            <li>Competitive benchmarking</li>
+                        </ul>
+                        <div class="service-price">Starting at $750</div>
+                    </div>
+                    
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14h-2V9h-2V7h4v10z"/>
+                            </svg>
+                        </div>
+                        <h3>Viral Concept Decks</h3>
+                        <p>Playbooks for campaigns and launches based on what's trending and what will drive engagement.</p>
+                        <ul class="service-features">
+                            <li>Creative concept development</li>
+                            <li>Platform-specific strategies</li>
+                            <li>Audience engagement tactics</li>
+                        </ul>
+                        <div class="service-price">Starting at $1,200</div>
+                    </div>
+                    
+                    <div class="service-card reveal">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" width="32" height="32">
+                                <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                            </svg>
+                        </div>
+                        <h3>Creative Voice Development</h3>
+                        <p>Messaging frameworks to build brand resonance with Gen Z and Millennials across all touchpoints.</p>
+                        <ul class="service-features">
+                            <li>Brand voice definition</li>
+                            <li>Messaging guidelines</li>
+                            <li>Content tone development</li>
+                        </ul>
+                        <div class="service-price">Custom pricing</div>
                     </div>
                 </div>
                 
-                <!-- Phony Content -->
-                <div class="client-card">
-                    <div class="client-logo">
-                        <img src="images/phony-logo.png" alt="Phony Content Logo" class="logo-image">
-                        <h3>Phony Content</h3>
+                <div class="featured-work reveal">
+                    <div class="featured-header">
+                        <h3>Featured Work</h3>
+                        <div class="featured-tag">Glossier Summer Campaign</div>
                     </div>
-                    <div class="client-metrics">
-                        <div class="metric">
-                            <span class="metric-number">14M+</span>
-                            <span class="metric-label">Cross-Platform Audience</span>
+                    
+                    <div class="featured-content">
+                        <div class="featured-image campaign-header reveal">
+                            <div class="campaign-title">
+                                <h3>GLOSSIER CAMPAIGN</h3>
+                                <p>Summer Refresh Concept</p>
+                            </div>
                         </div>
-                        <div class="metric">
-                            <span class="metric-number">70M+</span>
-                            <span class="metric-label">Monthly Video Views</span>
+                        
+                        <div class="featured-details">
+                            <div class="featured-item">
+                                <h4>Challenge</h4>
+                                <p>Create a summer campaign concept that would resonate with Glossier's audience and drive authentic engagement in an increasingly crowded beauty space.</p>
+                            </div>
+                            
+                            <div class="featured-item">
+                                <h4>Approach</h4>
+                                <ul>
+                                    <li>Concepted a summer campaign celebrating minimal refresh moments and everyday beauty</li>
+                                    <li>Proposed UGC-driven storytelling series (Midday Refresh, Glossier Sightings)</li>
+                                    <li>Developed platform-specific content strategies for TikTok, Instagram, and YouTube</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="featured-item">
+                                <h4>Strategy</h4>
+                                <p>Deepen brand affinity by aligning with authenticity and low-effort beauty trends that celebrate real moments throughout the day, creating a movement rather than just a campaign.</p>
+                            </div>
                         </div>
-                        <div class="metric">
-                            <span class="metric-number">170M+</span>
-                            <span class="metric-label">Minutes Watched Monthly</span>
-                        </div>
-                    </div>
-                    <div class="client-impact">
-                        <h4>Our Impact</h4>
-                        <p>Scripted top-viewed Snapchat stories with over 40% retention rates, helping establish Phony Content as "the largest network of scripted storytelling on social media."</p>
-                        <ul class="impact-points">
-                            <li>Developed chat fiction formats that resonated with Gen Z viewers</li>
-                            <li>Created viral episodes garnering 15M+ views</li>
-                            <li>Contributed to the company's growth across six different shows</li>
-                        </ul>
                     </div>
                 </div>
                 
-                <!-- StockX -->
-                <div class="client-card">
-                    <div class="client-logo">
-                        <img src="images/stockx-logo.png" alt="StockX Logo" class="logo-image">
-                        <h3>StockX</h3>
-                    </div>
-                    <div class="client-metrics">
-                        <div class="metric">
-                            <span class="metric-number">15M+</span>
-                            <span class="metric-label">Lifetime Buyers</span>
+                <div class="client-logos reveal">
+                    <h3 class="clients-title">Trusted By</h3>
+                    <div class="logos-container">
+                        <div class="logo-item">
+                            <img src="images/snap-logo.png" alt="Snap Inc." class="client-logo">
                         </div>
-                        <div class="metric">
-                            <span class="metric-number">50M+</span>
-                            <span class="metric-label">Trades Facilitated</span>
+                        <div class="logo-item">
+                            <img src="images/stockx-logo.png" alt="StockX" class="client-logo">
                         </div>
-                        <div class="metric">
-                            <span class="metric-number">45%</span>
-                            <span class="metric-label">YoY Streetwear Sales Growth</span>
+                        <div class="logo-item">
+                            <img src="images/phony-logo.png" alt="Phony Content" class="client-logo">
                         </div>
-                    </div>
-                    <div class="client-impact">
-                        <h4>Our Impact</h4>
-                        <p>Supported creative campaigns ensuring brand consistency and elevated storytelling, contributing to StockX's position as a cultural bellwether in the $3.8B sneaker and streetwear marketplace.</p>
-                        <ul class="impact-points">
-                            <li>Developed trend-aligned content strategies for emerging audiences</li>
-                            <li>Created messaging that resonated with the growing female user segment (38% of customers)</li>
-                            <li>Supported the brand's cultural relevance through authentic storytelling</li>
-                        </ul>
                     </div>
                 </div>
             </div>
-            
-            <div class="client-cta">
-                <h3>Ready to join these forward-thinking brands?</h3>
-                <a href="#contact" class="cta-button">Let's Talk</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="work" class="work">
-        <div class="container">
-            <h2>Our Work</h2>
-            <p class="section-intro">Creative strategies rooted in cultural momentum. Here's a glimpse at the kind of impact we help brands create. <span class="note">(The following examples are representative of our work; actual client deliverables are confidential.)</span></p>
-            
-            <div class="work-cards">
-                <div class="work-card">
-                    <div class="work-icon">🛹</div>
-                    <div class="work-content">
-                        <h3>VANS | Trend Pulse Report</h3>
-                        <h4>"Micro Nostalgia and the Gen Z Skate Resurgence"</h4>
-                        <ul>
-                            <li>Forecasted early 2000s skate fashion revival trend.</li>
-                            <li>Outlined brand opportunities: limited throwback drops, DIY-focused collabs, raw content formats.</li>
-                            <li>Strategy: Increase cultural relevance through trend-led capsule collections and UGC.</li>
-                        </ul>
-                        <button class="view-sample" data-sample="vans">View Mockup Example</button>
-                    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="reveal">Contact</h2>
+                    <div class="accent-line reveal"></div>
+                    <p class="section-intro reveal">Ready to catch what's next? Let's build something that moves culture — and moves your brand.</p>
                 </div>
                 
-                <div class="work-card">
-                    <div class="work-icon">🏞️</div>
-                    <div class="work-content">
-                        <h3>Outdoor Voices | Content Audit</h3>
-                        <h4>"Bringing Movement Back Into the Feed"</h4>
-                        <ul>
-                            <li>Identified underleveraged TikTok potential and UGC strategy gaps.</li>
-                            <li>Proposed real-life GRWM challenges, microadventure trend content, creator ambassador pilot.</li>
-                            <li>Strategy: Boost TikTok growth and community-led engagement by integrating more authentic outdoor culture narratives.</li>
-                        </ul>
-                        <button class="view-sample" data-sample="ov">View Mockup Example</button>
-                    </div>
-                </div>
-                
-                <div class="work-card">
-                    <div class="work-icon">✨</div>
-                    <div class="work-content">
-                        <h3>Glossier | Viral Concept Deck</h3>
-                        <h4>"Beauty for the In-Between"</h4>
-                        <ul>
-                            <li>Concepted a summer campaign celebrating minimal refresh moments and everyday beauty.</li>
-                            <li>Proposed UGC-driven storytelling series (Midday Refresh, Glossier Sightings).</li>
-                            <li>Strategy: Deepen brand affinity by aligning with authenticity and low-effort beauty trends.</li>
-                        </ul>
-                        <button class="view-sample" data-sample="glossier">View Mockup Example</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="work-cta">
-                <p>Ready to see what we could create for your brand?</p>
-                <a href="#contact" class="cta-button">Book a Free Discovery Call</a>
-            </div>
-        </div>
-        
-        <!-- Sample Preview Modal -->
-        <div id="sample-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <div class="sample-preview">
-                    <div id="vans-preview" class="preview-content">
-                        <h3>VANS | Trend Pulse Report</h3>
-                        <p class="mockup-disclaimer">This is a mockup for demonstration purposes only.</p>
-                        <div class="preview-slides">
-                            <div class="slide">
-                                <img src="https://via.placeholder.com/800x450?text=VANS+Trend+Report+Mockup+1" alt="VANS Trend Report Mockup 1">
-                            </div>
-                            <div class="slide">
-                                <img src="https://via.placeholder.com/800x450?text=VANS+Trend+Report+Mockup+2" alt="VANS Trend Report Mockup 2">
-                            </div>
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <h3>Get in Touch</h3>
+                        <a href="mailto:shanedelaney11@gmail.com" class="email-link">shanedelaney11@gmail.com</a>
+                        
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="contact-cta reveal">
+                            <h4>Let's collaborate</h4>
+                            <p>Whether you're looking to refresh your brand strategy, launch a new campaign, or simply stay ahead of cultural trends, I'm here to help your brand move at the speed of culture.</p>
                         </div>
                     </div>
-                    <div id="ov-preview" class="preview-content">
-                        <h3>Outdoor Voices | Content Audit</h3>
-                        <p class="mockup-disclaimer">This is a mockup for demonstration purposes only.</p>
-                        <div class="preview-slides">
-                            <div class="slide">
-                                <img src="https://via.placeholder.com/800x450?text=Outdoor+Voices+Audit+Mockup+1" alt="Outdoor Voices Audit Mockup 1">
-                            </div>
-                            <div class="slide">
-                                <img src="https://via.placeholder.com/800x450?text=Outdoor+Voices+Audit+Mockup+2" alt="Outdoor Voices Audit Mockup 2">
-                            </div>
+                    
+                    <form class="contact-form reveal">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                    <div id="glossier-preview" class="preview-content">
-                        <h3>Glossier | Viral Concept Deck</h3>
-                        <p class="mockup-disclaimer">This is a mockup for demonstration purposes only.</p>
-                        <div class="preview-slides">
-                            <div class="slide">
-                                <img src="https://via.placeholder.com/800x450?text=Glossier+Concept+Deck+Mockup+1" alt="Glossier Concept Deck Mockup 1">
-                            </div>
-                            <div class="slide">
-                                <img src="https://via.placeholder.com/800x450?text=Glossier+Concept+Deck+Mockup+2" alt="Glossier Concept Deck Mockup 2">
-                            </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                    </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="contact" class="contact">
+    <footer class="footer">
         <div class="container">
-            <h2>Let's Work Together</h2>
-            <p>Ready to catch what's next? Let's build something that moves culture — and moves your brand.</p>
-            <p class="email">shanedelaney11@gmail.com</p>
-            <a href="#" class="cta-button">Book a Discovery Call</a>
+            <div class="footer-content">
+                <a href="#hero" class="footer-logo">emrg</a>
+                <p class="copyright">&copy; 2024 emrg | Creative Strategy Studio</p>
+            </div>
         </div>
-    </section>
+    </footer>
 
     <script src="script.js"></script>
-    <script src="script-fix.js"></script>
 </body>
 </html> 

@@ -1,9 +1,10 @@
-// Multi-page navigation script
+// Minimalist navigation script
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     const body = document.body;
+    const header = document.querySelector('header');
     
     if (mobileMenu && navMenu) {
         mobileMenu.addEventListener('click', function(e) {
@@ -40,6 +41,17 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
         });
     }
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        if (header) {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+    });
     
     // Handle modal functionality if present
     initModalFunctionality();

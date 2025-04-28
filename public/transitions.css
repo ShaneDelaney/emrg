@@ -1,0 +1,87 @@
+/* Enhanced transitions for a more alluring site */
+body {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.page-transition-out {
+    opacity: 0;
+}
+
+body.page-transition-in {
+    opacity: 0;
+}
+
+/* Element fade-in animations */
+.fade-in, .fade-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible, .fade-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animations for lists */
+.achievement-list li, .service-features li {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.achievement-list li.visible, .service-features li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.achievement-list li:nth-child(1), .service-features li:nth-child(1) { transition-delay: 0.1s; }
+.achievement-list li:nth-child(2), .service-features li:nth-child(2) { transition-delay: 0.2s; }
+.achievement-list li:nth-child(3), .service-features li:nth-child(3) { transition-delay: 0.3s; }
+.achievement-list li:nth-child(4), .service-features li:nth-child(4) { transition-delay: 0.4s; }
+.achievement-list li:nth-child(5), .service-features li:nth-child(5) { transition-delay: 0.5s; }
+
+/* Hover effects for interactive elements */
+.cta-button {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+                background-color 0.3s ease, 
+                box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-card, .sample-card, .card {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-card:hover, .sample-card:hover, .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Image hover effects */
+.client-logo, .preview-logo {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.client-logo:hover, .preview-logo:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Modal transitions */
+.modal {
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-content {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+} 

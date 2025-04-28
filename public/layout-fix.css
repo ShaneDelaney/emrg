@@ -1,0 +1,116 @@
+/* Layout fixes for consistent alignment and spacing */
+
+/* Global layout fixes */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* Consistent spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Button alignment and consistency */
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 120px;
+}
+
+/* Card alignment */
+.card, .service-card, .sample-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fix for flex layouts */
+.service-grid, .samples-grid, .client-logos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Consistent image handling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fix for modal positioning */
+.modal-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 auto;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* Fix for footer positioning */
+footer {
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Fix for hero section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Fix for about page content */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Fix for services page */
+.services-hero {
+    text-align: center;
+    padding: 100px 0 50px;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+    
+    .hero {
+        min-height: calc(100vh - 70px);
+    }
+    
+    .service-grid, .samples-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+} 
