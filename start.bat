@@ -1,0 +1,3 @@
+@echo off
+echo Starting local server...
+npx http-server -p 3001 -c-1 
