@@ -2,16 +2,72 @@
 const mobileMenu = document.getElementById('mobile-menu');
 const navMenu = document.querySelector('.nav-menu');
 
+// Fix for mobile viewport height issues (iOS Safari)
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Set the height on page load
+setViewportHeight();
+
+// Update the height on resize
+window.addEventListener('resize', () => {
+    setViewportHeight();
+});
+
+// Improve mobile scrolling experience
+document.querySelectorAll('.nav-link, .cta-button').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        // Add a small delay for mobile menu to close first
+        setTimeout(() => {
+            window.scrollTo({
+                top: targetElement.offsetTop - 70, // Offset for fixed header
+                behavior: 'smooth'
+            });
+        }, 300);
+    });
+});
+
+// Prevent content shift when scrolling on mobile
+let scrollPosition = 0;
+function toggleBodyScroll(isLocked) {
+    if (isLocked) {
+        scrollPosition = window.pageYOffset;
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${scrollPosition}px`;
+        document.body.style.width = '100%';
+    } else {
+        document.body.style.removeProperty('overflow');
+        document.body.style.removeProperty('position');
+        document.body.style.removeProperty('top');
+        document.body.style.removeProperty('width');
+        window.scrollTo(0, scrollPosition);
+    }
+}
+
+// Update mobile menu toggle to prevent body scroll
 mobileMenu.addEventListener('click', function() {
     mobileMenu.classList.toggle('active');
     navMenu.classList.toggle('active');
+    
+    // Toggle body scroll lock when menu is open
+    toggleBodyScroll(navMenu.classList.contains('active'));
 });
 
-// Close mobile menu when clicking a nav link
+// Ensure body scroll is restored when clicking a nav link
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        navMenu.classList.remove('active');
+        if (navMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+            toggleBodyScroll(false);
+        }
     });
 });
 
