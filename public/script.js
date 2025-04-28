@@ -16,24 +16,65 @@ window.addEventListener('resize', () => {
     setViewportHeight();
 });
 
-// Improve mobile scrolling experience
+// Set initial active section
+document.addEventListener('DOMContentLoaded', () => {
+    // Set hero as active by default
+    document.getElementById('hero').classList.add('active');
+    
+    // Set the corresponding nav link as active
+    document.querySelector('a[href="#hero"]').classList.add('active');
+    
+    // Trigger fade-in for the active section
+    const activeSection = document.querySelector('section.active');
+    if (activeSection) {
+        const elements = activeSection.querySelectorAll('.fade-element');
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add('fade-in');
+            }, 100 * index);
+        });
+    }
+});
+
+// Handle navigation between sections
 document.querySelectorAll('.nav-link, .cta-button').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
         
-        // Add a small delay for mobile menu to close first
-        setTimeout(() => {
-            window.scrollTo({
-                top: targetElement.offsetTop - 70, // Offset for fixed header
-                behavior: 'smooth'
-            });
-        }, 300);
+        // Get the target section ID
+        const targetId = this.getAttribute('href');
+        
+        // Remove active class from all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+        });
+        
+        // Add active class to target section
+        document.querySelector(targetId).classList.add('active');
+        
+        // Update active nav link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // If it's a nav link, add active class
+        if (this.classList.contains('nav-link')) {
+            this.classList.add('active');
+        } else {
+            // If it's a CTA button, find and activate the corresponding nav link
+            document.querySelector(`.nav-link[href="${targetId}"]`).classList.add('active');
+        }
+        
+        // Close mobile menu if open
+        if (navMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            navMenu.classList.remove('active');
+            toggleBodyScroll(false);
+        }
     });
 });
 
-// Prevent content shift when scrolling on mobile
+// Prevent content shift when toggling mobile menu
 let scrollPosition = 0;
 function toggleBodyScroll(isLocked) {
     if (isLocked) {
@@ -47,91 +88,59 @@ function toggleBodyScroll(isLocked) {
         document.body.style.removeProperty('position');
         document.body.style.removeProperty('top');
         document.body.style.removeProperty('width');
-        window.scrollTo(0, scrollPosition);
     }
 }
 
-// Update mobile menu toggle to prevent body scroll
+// Toggle mobile menu
 mobileMenu.addEventListener('click', function() {
     mobileMenu.classList.toggle('active');
     navMenu.classList.toggle('active');
-    
-    // Toggle body scroll lock when menu is open
     toggleBodyScroll(navMenu.classList.contains('active'));
 });
 
-// Ensure body scroll is restored when clicking a nav link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        if (navMenu.classList.contains('active')) {
-            mobileMenu.classList.remove('active');
-            navMenu.classList.remove('active');
-            toggleBodyScroll(false);
-        }
-    });
-});
+// Fade-in animation for sections when they become active
+function setupFadeInObserver() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('.nav-link, .cta-button').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        window.scrollTo({
-            top: targetElement.offsetTop,
-            behavior: 'smooth'
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const elements = entry.target.querySelectorAll('.fade-element');
+                elements.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('fade-in');
+                    }, 100 * index);
+                });
+                observer.unobserve(entry.target);
+            }
         });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
     });
-});
+}
 
-// Active navigation highlighting
-window.addEventListener('scroll', () => {
-    let current = '';
-    const sections = document.querySelectorAll('section');
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Fade-in animation for sections
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
+// Add fade-in classes to elements
 document.querySelectorAll('section').forEach(section => {
-    section.classList.add('hidden');
-    observer.observe(section);
+    const elementsToAnimate = section.querySelectorAll('h1, h2, h3, p, .card, .impact-item, .logo-item, .cta-button');
+    elementsToAnimate.forEach(el => {
+        el.classList.add('fade-element');
+    });
 });
+
+// Setup the observer
+setupFadeInObserver();
 
 // Add CSS for animations
 const style = document.createElement('style');
 style.textContent = `
-    .hidden {
+    .fade-element {
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.6s ease, transform 0.6s ease;
