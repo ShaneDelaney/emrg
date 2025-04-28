@@ -71,6 +71,11 @@ document.querySelectorAll('.nav-link, .cta-button').forEach(anchor => {
             navMenu.classList.remove('active');
             toggleBodyScroll(false);
         }
+        
+        // Add this for mobile:
+        setTimeout(() => {
+            setViewportHeight();
+        }, 100);
     });
 });
 
@@ -151,4 +156,23 @@ style.textContent = `
         transform: translateY(0);
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Add mobile-specific adjustments
+
+// Fix for mobile viewport height
+function setMobileHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
+    // Adjust active section height
+    const activeSection = document.querySelector('section.active');
+    if (activeSection) {
+        activeSection.style.minHeight = `${window.innerHeight}px`;
+    }
+}
+
+// Run on load and resize
+window.addEventListener('load', setMobileHeight);
+window.addEventListener('resize', setMobileHeight);
+window.addEventListener('orientationchange', setMobileHeight); 
