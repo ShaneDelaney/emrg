@@ -1,0 +1,180 @@
+/* Mobile Optimization Styles */
+
+/* Base mobile adjustments */
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    h3 {
+        font-size: 1.5rem !important;
+    }
+    
+    p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+    }
+    
+    /* Container padding */
+    .container {
+        padding: 0 20px !important;
+    }
+    
+    /* Button sizing */
+    .cta-button {
+        padding: 0.8rem 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    /* Section spacing */
+    section {
+        padding: 60px 0 !important;
+    }
+    
+    /* Footer adjustments */
+    footer {
+        padding: 30px 0 !important;
+    }
+    
+    /* Hero section adjustments */
+    .hero-content {
+        padding: 0 20px !important;
+        text-align: center !important;
+    }
+    
+    /* Services page adjustments */
+    .service-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    .service-card {
+        padding: 25px !important;
+    }
+    
+    /* Client logos adjustments */
+    .client-logos {
+        flex-wrap: wrap !important;
+        gap: 20px !important;
+    }
+    
+    .logo-container {
+        width: calc(50% - 20px) !important;
+        height: 70px !important;
+    }
+    
+    /* Samples grid adjustments */
+    .samples-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+    
+    /* Modal adjustments */
+    .modal-content {
+        width: 95% !important;
+        padding: 20px !important;
+        margin: 10% auto !important;
+    }
+    
+    /* About page adjustments */
+    .about-content {
+        padding: 0 15px !important;
+    }
+    
+    /* Contact form adjustments */
+    .contact-form {
+        padding: 25px !important;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Metrics section adjustments */
+    .metrics-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 30px !important;
+    }
+    
+    /* Testimonials adjustments */
+    .testimonial-card {
+        padding: 20px !important;
+    }
+    
+    /* Case study adjustments */
+    .case-study-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px !important;
+    }
+    
+    .case-study-details {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+    }
+    
+    /* Touch-friendly adjustments */
+    button, 
+    .cta-button, 
+    .nav-link, 
+    .service-card, 
+    .sample-card,
+    .logo-container {
+        min-height: 44px !important; /* Minimum touch target size */
+    }
+    
+    /* Improved spacing between interactive elements */
+    li, 
+    .nav-menu li, 
+    .achievement-list li {
+        margin-bottom: 15px !important;
+    }
+    
+    /* Form elements */
+    input, 
+    textarea, 
+    select {
+        font-size: 16px !important; /* Prevents iOS zoom on focus */
+        padding: 12px !important;
+    }
+    
+    /* Prevent content from being hidden under fixed header */
+    main {
+        padding-top: 70px !important;
+    }
+    
+    /* Improved scrolling */
+    html, body {
+        -webkit-overflow-scrolling: touch !important;
+    }
+}
+
+/* Small phones optimization */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.9rem !important;
+    }
+    
+    h2 {
+        font-size: 1.6rem !important;
+    }
+    
+    .container {
+        padding: 0 15px !important;
+    }
+    
+    .logo-container {
+        width: 100% !important;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr !important;
+    }
+} 
