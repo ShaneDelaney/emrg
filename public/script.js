@@ -175,4 +175,86 @@ function setMobileHeight() {
 // Run on load and resize
 window.addEventListener('load', setMobileHeight);
 window.addEventListener('resize', setMobileHeight);
-window.addEventListener('orientationchange', setMobileHeight); 
+window.addEventListener('orientationchange', setMobileHeight);
+
+// Improve mobile centering
+function adjustMobileCentering() {
+    const isMobile = window.innerWidth <= 768;
+    const heroContent = document.querySelector('.hero-content');
+    
+    if (isMobile) {
+        // Calculate optimal vertical position
+        const windowHeight = window.innerHeight;
+        const contentHeight = heroContent.offsetHeight;
+        const optimalOffset = Math.max(0, (windowHeight - contentHeight - 100) / 2);
+        
+        // Apply optimal margin-top
+        heroContent.style.marginTop = `${optimalOffset > 0 ? optimalOffset : 0}px`;
+    } else {
+        // Reset on desktop
+        heroContent.style.marginTop = '0';
+    }
+}
+
+// Run on load, resize, and orientation change
+window.addEventListener('load', adjustMobileCentering);
+window.addEventListener('resize', adjustMobileCentering);
+window.addEventListener('orientationchange', adjustMobileCentering);
+
+// Modal functionality for work samples
+const modal = document.getElementById('sample-modal');
+const sampleButtons = document.querySelectorAll('.view-sample');
+const closeModal = document.querySelector('.close-modal');
+const previewContents = document.querySelectorAll('.preview-content');
+
+// Open modal with the correct preview
+sampleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const sampleId = button.getAttribute('data-sample');
+        
+        // Hide all previews
+        previewContents.forEach(preview => {
+            preview.style.display = 'none';
+        });
+        
+        // Show the selected preview
+        document.getElementById(`${sampleId}-preview`).style.display = 'block';
+        
+        // Show the modal
+        modal.style.display = 'block';
+        
+        // Prevent body scrolling
+        toggleBodyScroll(true);
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    toggleBodyScroll(false);
+});
+
+// Close modal when clicking outside of content
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        toggleBodyScroll(false);
+    }
+});
+
+// Add escape key to close modal
+window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+        modal.style.display = 'none';
+        toggleBodyScroll(false);
+    }
+});
+
+// Add work section to navigation
+document.addEventListener('DOMContentLoaded', () => {
+    // Add fade-in animation to work cards
+    const workCards = document.querySelectorAll('.work-card');
+    workCards.forEach((card, index) => {
+        card.classList.add('fade-element');
+    });
+}); 
