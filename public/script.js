@@ -75,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize scroll animations
     initScrollAnimations();
+    
+    // Initialize enhanced About section animations
+    initEnhancedAboutAnimations();
 });
 
 // Initialize animations
@@ -566,4 +569,97 @@ if (contactForm) {
         // Reset form
         contactForm.reset();
     });
+}
+
+// Add this to your existing scroll animations function
+
+function initEnhancedAboutAnimations() {
+    // Get the About section
+    const aboutSection = document.getElementById('about');
+    
+    if (!aboutSection) return;
+    
+    // Create an Intersection Observer for the About section
+    const aboutObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // When About section comes into view, start animations with precise timing
+                
+                // First animate the section header
+                const sectionHeader = aboutSection.querySelector('.section-header');
+                if (sectionHeader) {
+                    const headerElements = sectionHeader.querySelectorAll('.reveal');
+                    headerElements.forEach((el, index) => {
+                        setTimeout(() => {
+                            el.classList.add('visible');
+                        }, 100 * index);
+                    });
+                }
+                
+                // Then animate the mission statement
+                const missionStatement = aboutSection.querySelector('.mission-statement');
+                if (missionStatement) {
+                    setTimeout(() => {
+                        missionStatement.classList.add('visible');
+                    }, 300);
+                }
+                
+                // Then animate the lead paragraph
+                const leadParagraph = aboutSection.querySelector('.lead');
+                if (leadParagraph) {
+                    setTimeout(() => {
+                        leadParagraph.classList.add('visible');
+                    }, 400);
+                }
+                
+                // Then animate the focus areas heading
+                const focusAreasHeading = aboutSection.querySelector('.focus-areas h3');
+                if (focusAreasHeading) {
+                    setTimeout(() => {
+                        focusAreasHeading.classList.add('visible');
+                    }, 500);
+                }
+                
+                // Then animate each service point with staggered timing
+                const servicePoints = aboutSection.querySelectorAll('.service-point');
+                servicePoints.forEach((point, index) => {
+                    setTimeout(() => {
+                        point.classList.add('visible');
+                    }, 600 + (index * 100));
+                });
+                
+                // Then animate the results heading
+                const resultsHeading = aboutSection.querySelector('.results-section h3');
+                if (resultsHeading) {
+                    setTimeout(() => {
+                        resultsHeading.classList.add('visible');
+                    }, 900);
+                }
+                
+                // Then animate each result item with staggered timing
+                const resultItems = aboutSection.querySelectorAll('.result-item');
+                resultItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, 1000 + (index * 100));
+                });
+                
+                // Finally animate the positioning statement
+                const positioningStatement = aboutSection.querySelector('.positioning-statement');
+                if (positioningStatement) {
+                    setTimeout(() => {
+                        positioningStatement.classList.add('visible');
+                    }, 1300);
+                }
+                
+                // Stop observing once animations are triggered
+                aboutObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the section is visible
+    });
+    
+    // Start observing the About section
+    aboutObserver.observe(aboutSection);
 } 
